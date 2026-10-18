@@ -1,1 +1,756 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta name="google-site-verification" content="codAI6HtzW3HDoNntsHdyU4zdXdQFhMstyTZFj1I1RY" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173e32">
+  <meta name="description" content="Um convite para aproveitar a natureza, a pesca, as piscinas e a boa comida no Águas de São José, em Santa Maria do Oeste, Paraná.">
+  <title>Águas de São José | Pesque e Pague</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #173e32;
+      --forest-deep: #102d25;
+      --leaf: #3f7254;
+      --lime: #d4df8e;
+      --cream: #f8f6ee;
+      --paper: #fffefa;
+      --ink: #23352d;
+      --muted: #69776f;
+      --line: #e5e8dc;
+      --gold: #e5a93f;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+
+    .topbar {
+      position: absolute;
+      z-index: 2;
+      inset: 0 0 auto;
+      color: #fff;
+    }
+    .nav {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      border-bottom: 1px solid rgb(255 255 255 / 22%);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgb(255 255 255 / 52%);
+      border-radius: 50%;
+      color: var(--lime);
+    }
+    .brand-mark svg { width: 23px; height: 23px; }
+    .brand-name { font-family: var(--serif); font-size: 19px; line-height: 1.05; }
+    .brand-sub { display: block; margin-top: 5px; color: rgb(255 255 255 / 72%); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 31px; font-size: 13px; color: rgb(255 255 255 / 88%); }
+    .nav-links a:hover { color: var(--lime); }
+    .nav-cta {
+      padding: 12px 19px;
+      border: 1px solid rgb(255 255 255 / 55%);
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      transition: background .2s, color .2s;
+    }
+    .nav-cta:hover { color: var(--forest); background: white; }
+
+    .hero {
+      min-height: 700px;
+      height: min(790px, 92vh);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      background: var(--forest) url("https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T2Uo72UjuHWSVgtS7Iu6lIfZFuIzaJLDHdajHOCULPvkxCuGYo896itPXRrJV4qZhWqZfe_nK3Y4Ww5BrcdLKs40iqd0U8XDCtq6JkP8MexgfRBoJoa-guJfD5UWw1uCEF5fbw=w1600-h1100-k-no") center 54% / cover no-repeat;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgb(13 39 31 / 86%) 0%, rgb(16 43 33 / 64%) 45%, rgb(16 43 33 / 10%) 100%),
+        linear-gradient(0deg, rgb(13 39 31 / 48%) 0%, transparent 50%);
+    }
+    .hero-content { position: relative; z-index: 1; padding-top: 72px; max-width: 660px; }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 23px;
+      color: var(--lime);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--lime); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 650px;
+      margin-bottom: 20px;
+      font: 500 clamp(48px, 6.5vw, 78px)/1.06 var(--serif);
+      letter-spacing: -.035em;
+    }
+    h1 em { color: var(--lime); font-weight: 500; }
+    .hero-copy { max-width: 465px; margin-bottom: 32px; color: rgb(255 255 255 / 85%); font-size: 16px; line-height: 1.75; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font: 700 12px var(--sans);
+      transition: transform .2s, background .2s;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button svg { width: 17px; height: 17px; }
+    .button-primary { color: var(--forest-deep); background: var(--lime); }
+    .button-primary:hover { background: #e2eba6; }
+    .button-ghost { color: white; border-color: rgb(255 255 255 / 56%); }
+    .button-ghost:hover { background: rgb(255 255 255 / 12%); }
+    .hero-note { display: flex; align-items: center; gap: 9px; margin-top: 55px; color: rgb(255 255 255 / 80%); font-size: 12px; }
+    .hero-note svg { width: 17px; height: 17px; color: var(--lime); }
+
+    .quick-info {
+      position: relative;
+      z-index: 1;
+      margin-top: -1px;
+      padding: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .quick-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .quick-item { display: flex; align-items: center; gap: 15px; min-height: 112px; padding: 22px 30px; }
+    .quick-item + .quick-item { border-left: 1px solid var(--line); }
+    .quick-icon {
+      width: 43px;
+      height: 43px;
+      flex: 0 0 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--leaf);
+      background: #eef1e4;
+    }
+    .quick-icon svg { width: 20px; height: 20px; }
+    .quick-label { display: block; margin-bottom: 4px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .quick-value { font-size: 14px; font-weight: 700; }
+    .quick-value small { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; font-weight: 400; }
+
+    section { padding: 100px 0; }
+    .section-kicker { margin-bottom: 14px; color: var(--leaf); font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    .section-title { margin-bottom: 17px; color: var(--forest); font: 500 clamp(34px, 4.5vw, 49px)/1.16 var(--serif); letter-spacing: -.025em; }
+    .section-copy { color: var(--muted); font-size: 14px; line-height: 1.85; }
+    .about { background: var(--cream); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(40px, 8vw, 100px); }
+    .about-copy { max-width: 465px; }
+    .about-copy .section-copy { margin-bottom: 27px; }
+    .text-link { display: inline-flex; align-items: center; gap: 8px; color: var(--leaf); font-size: 12px; font-weight: 700; }
+    .text-link svg { width: 15px; height: 15px; transition: transform .2s; }
+    .text-link:hover svg { transform: translateX(4px); }
+    .about-photo { position: relative; min-height: 420px; }
+    .about-photo img { width: 100%; height: 420px; object-fit: cover; border-radius: 2px; }
+    .photo-caption {
+      position: absolute;
+      right: -20px;
+      bottom: 25px;
+      width: 215px;
+      padding: 19px 21px;
+      color: white;
+      background: var(--forest);
+    }
+    .photo-caption strong { display: block; margin-bottom: 6px; font: 500 20px var(--serif); }
+    .photo-caption span { color: rgb(255 255 255 / 75%); font-size: 11px; }
+
+    .experiences { color: white; background: var(--forest); }
+    .experiences .section-kicker { color: var(--lime); }
+    .experiences .section-title { color: white; }
+    .experience-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 42px; }
+    .experience-heading .section-copy { max-width: 330px; margin-bottom: 5px; color: rgb(255 255 255 / 70%); }
+    .experience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .experience-card { min-height: 255px; padding: 30px 26px; border: 1px solid rgb(255 255 255 / 18%); }
+    .experience-card .card-number { color: var(--lime); font: 500 14px var(--serif); }
+    .experience-card h3 { margin: 42px 0 10px; color: white; font: 500 24px var(--serif); }
+    .experience-card p { max-width: 270px; margin-bottom: 0; color: rgb(255 255 255 / 70%); font-size: 12px; line-height: 1.8; }
+
+    .gallery { background: var(--paper); }
+    .gallery-top { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 35px; }
+    .gallery-top .section-title { margin-bottom: 0; }
+    .gallery-grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; grid-template-rows: 210px 210px; gap: 13px; }
+    .gallery-item { position: relative; overflow: hidden; background: #dfe5d9; }
+    .gallery-item:first-child { grid-row: span 2; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-item::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgb(8 27 20 / 55%)); pointer-events: none; }
+    .gallery-item span { position: absolute; z-index: 1; right: 17px; bottom: 15px; left: 17px; color: white; font-size: 12px; font-weight: 600; }
+
+    .reviews { background: #f0f1e8; }
+    .reviews-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 37px; }
+    .rating { display: flex; align-items: center; gap: 13px; }
+    .rating-number { color: var(--forest); font: 500 45px var(--serif); }
+    .stars { color: var(--gold); font-size: 15px; letter-spacing: 2px; }
+    .rating-caption { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .review-card { min-height: 205px; padding: 26px; background: var(--paper); }
+    .review-stars { color: var(--gold); font-size: 12px; letter-spacing: 2px; }
+    .review-card blockquote { margin: 19px 0 23px; color: var(--ink); font: 500 17px/1.55 var(--serif); }
+    .review-source { color: var(--muted); font-size: 10px; }
+
+    .visit { color: white; background: var(--forest-deep); }
+    .visit-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
+    .visit .section-kicker { color: var(--lime); }
+    .visit .section-title { color: white; }
+    .visit .section-copy { max-width: 390px; margin-bottom: 25px; color: rgb(255 255 255 / 70%); }
+    .contact-line { display: flex; gap: 13px; align-items: start; margin-top: 22px; color: rgb(255 255 255 / 85%); font-size: 13px; line-height: 1.65; }
+    .contact-line svg { width: 18px; height: 18px; flex: 0 0 18px; color: var(--lime); }
+    .contact-line strong { display: block; margin-bottom: 3px; color: white; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .hours-card { padding: 30px 34px; color: var(--ink); background: var(--paper); }
+    .hours-card h3 { margin-bottom: 20px; color: var(--forest); font: 500 25px var(--serif); }
+    .hours-row { display: flex; justify-content: space-between; gap: 15px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+    .hours-row:last-child { border-bottom: 0; }
+    .hours-row span:last-child { color: var(--leaf); font-weight: 700; }
+    .hours-row.closed span:last-child { color: var(--muted); font-weight: 500; }
+    .hours-footnote { margin: 15px 0 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+
+    footer { padding: 27px 0; color: rgb(255 255 255 / 65%); background: #0b251d; font-size: 10px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { color: white; font: 500 16px var(--serif); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .footer-links a:hover { color: var(--lime); }
+
+    @media (max-width: 780px) {
+      .wrap { width: min(100% - 36px, 620px); }
+      .nav { min-height: 74px; }
+      .nav-links { display: none; }
+      .nav-cta { padding: 10px 13px; font-size: 10px; }
+      .hero { min-height: 680px; height: 86vh; background-position: 57% center; }
+      .hero::before { background: linear-gradient(90deg, rgb(13 39 31 / 82%), rgb(16 43 33 / 35%)), linear-gradient(0deg, rgb(13 39 31 / 48%), transparent 65%); }
+      .hero-content { padding-top: 62px; }
+      h1 { font-size: clamp(48px, 12vw, 70px); }
+      .hero-copy { max-width: 390px; font-size: 14px; }
+      .hero-note { margin-top: 39px; }
+      .quick-grid { grid-template-columns: 1fr; padding: 7px 0; }
+      .quick-item { min-height: 77px; padding: 14px 3px; }
+      .quick-item + .quick-item { border-top: 1px solid var(--line); border-left: 0; }
+      .quick-icon { width: 39px; height: 39px; flex-basis: 39px; }
+      section { padding: 72px 0; }
+      .about-grid, .visit-grid { grid-template-columns: 1fr; gap: 38px; }
+      .about-copy { max-width: none; }
+      .about-photo { min-height: 320px; margin-right: 13px; }
+      .about-photo img { height: 320px; }
+      .photo-caption { right: -13px; bottom: 15px; width: 190px; }
+      .experience-heading, .gallery-top, .reviews-heading { align-items: start; flex-direction: column; }
+      .experience-heading { gap: 10px; margin-bottom: 27px; }
+      .experience-grid { grid-template-columns: 1fr; gap: 10px; }
+      .experience-card { min-height: 0; padding: 23px; }
+      .experience-card h3 { margin: 19px 0 8px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 155px 155px; gap: 9px; }
+      .gallery-item:first-child { grid-column: span 2; grid-row: auto; }
+      .review-grid { grid-template-columns: 1fr; gap: 10px; }
+      .review-card { min-height: 0; padding: 23px; }
+      .review-card blockquote { margin: 13px 0 17px; }
+      .visit-grid { gap: 30px; }
+      .hours-card { padding: 25px 21px; }
+      .footer-inner { align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 390px) {
+      .brand-name { font-size: 16px; }
+      .brand-mark { width: 37px; height: 37px; }
+      .nav-cta { padding: 9px 10px; }
+      .hero { min-height: 640px; }
+      .actions { align-items: stretch; flex-direction: column; max-width: 250px; }
+      .gallery-grid { grid-template-rows: 200px 130px 130px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+
+    /* Finishing touches */
+    :root {
+      --forest: #174333;
+      --forest-deep: #102e25;
+      --leaf: #477b58;
+      --lime: #dce7a0;
+      --cream: #f7f5ed;
+      --paper: #fff;
+      --ink: #26382f;
+      --muted: #738078;
+      --line: #e8e9df;
+      --gold: #d99c35;
+    }
+    body { background: var(--paper); }
+    .wrap { width: min(1200px, calc(100% - 64px)); }
+    .topbar { background: linear-gradient(180deg, rgb(13 38 29 / 30%), transparent); }
+    .nav { min-height: 94px; border-color: rgb(255 255 255 / 25%); }
+    .brand-mark { border-color: rgb(220 231 160 / 58%); background: rgb(255 255 255 / 8%); }
+    .brand-name { font-size: 20px; }
+    .brand-sub { letter-spacing: .16em; }
+    .nav-links { gap: 35px; font-size: 12px; }
+    .nav-links a { position: relative; padding: 8px 0; }
+    .nav-links a::after { position: absolute; right: 100%; bottom: 0; left: 0; height: 1px; background: var(--lime); content: ""; transition: right .2s; }
+    .nav-links a:hover::after { right: 0; }
+    .nav-cta { border-color: rgb(255 255 255 / 65%); border-radius: 99px; padding: 12px 20px; }
+    .hero {
+      min-height: 730px;
+      height: min(830px, 94vh);
+      background-position: center 58%;
+    }
+    .hero::before {
+      background:
+        radial-gradient(ellipse at 76% 56%, rgb(17 44 32 / 2%), rgb(13 39 31 / 24%) 68%),
+        linear-gradient(90deg, rgb(13 39 31 / 82%) 0%, rgb(16 43 33 / 58%) 43%, rgb(16 43 33 / 8%) 100%),
+        linear-gradient(0deg, rgb(13 39 31 / 48%) 0%, transparent 52%);
+    }
+    .hero-content { max-width: 700px; padding-top: 86px; }
+    .eyebrow { gap: 12px; font-size: 10px; letter-spacing: .22em; }
+    .eyebrow::before { width: 42px; }
+    h1 { max-width: 680px; font-size: clamp(54px, 6.7vw, 84px); line-height: 1.04; }
+    .hero-copy { max-width: 445px; color: rgb(255 255 255 / 88%); font-size: 15px; }
+    .button { min-height: 51px; padding: 0 23px; border-radius: 99px; font-size: 11px; letter-spacing: .02em; }
+    .button-primary { background: var(--lime); box-shadow: 0 7px 22px rgb(0 0 0 / 12%); }
+    .button-primary:hover { background: #e8efba; }
+    .button-ghost { border-color: rgb(255 255 255 / 61%); backdrop-filter: blur(5px); }
+    .hero-note { margin-top: 42px; font-size: 11px; letter-spacing: .04em; }
+    .hero-rating {
+      position: absolute;
+      right: max(32px, calc((100vw - 1200px) / 2));
+      bottom: 119px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 15px 19px;
+      border: 1px solid rgb(255 255 255 / 30%);
+      border-radius: 12px;
+      color: white;
+      background: rgb(20 53 41 / 56%);
+      box-shadow: 0 12px 35px rgb(0 0 0 / 16%);
+      backdrop-filter: blur(12px);
+    }
+    .hero-rating-score { font: 600 29px/1 var(--serif); }
+    .hero-rating-detail { display: grid; gap: 4px; }
+    .hero-rating-stars { color: #f4ca73; font-size: 11px; letter-spacing: 2px; }
+    .hero-rating-caption { color: rgb(255 255 255 / 78%); font-size: 10px; }
+    .quick-info { z-index: 2; margin: -55px 0 -55px; padding: 0; background: transparent; border: 0; }
+    .quick-grid {
+      overflow: hidden;
+      border: 1px solid rgb(232 233 223 / 85%);
+      border-radius: 14px;
+      background: var(--paper);
+      box-shadow: 0 17px 50px rgb(31 56 41 / 11%);
+    }
+    .quick-item { min-height: 111px; gap: 16px; padding: 20px 26px; }
+    .quick-item + .quick-item { border-color: var(--line); }
+    .quick-icon { color: var(--leaf); background: #f0f3e8; }
+    .quick-value { color: var(--forest); font-size: 13px; }
+    .quick-value small { color: var(--muted); font-size: 11px; }
+    section { padding: 112px 0; }
+    .about { padding-top: 162px; background: var(--cream); }
+    .section-kicker { margin-bottom: 17px; font-size: 9px; letter-spacing: .22em; }
+    .section-title { margin-bottom: 20px; font-size: clamp(37px, 4.4vw, 52px); line-height: 1.13; }
+    .section-copy { font-size: 13px; line-height: 1.95; }
+    .about-grid { gap: clamp(55px, 9vw, 115px); }
+    .about-copy { max-width: 475px; }
+    .about-copy .section-copy { margin-bottom: 20px; }
+    .text-link { gap: 10px; font-size: 11px; }
+    .about-copy .text-link { margin-top: 7px; }
+    .about-photo { min-height: 430px; }
+    .about-photo::before {
+      position: absolute;
+      z-index: 1;
+      top: -13px;
+      left: -13px;
+      width: 90px;
+      height: 90px;
+      border-top: 1px solid #aebd81;
+      border-left: 1px solid #aebd81;
+      content: "";
+      pointer-events: none;
+    }
+    .about-photo img { height: 430px; border-radius: 9px; box-shadow: 0 22px 55px rgb(41 57 42 / 13%); }
+    .photo-caption { right: -22px; bottom: 24px; width: 226px; padding: 20px 22px; border-radius: 7px; box-shadow: 0 12px 30px rgb(9 30 22 / 20%); }
+    .photo-caption strong { font-size: 19px; }
+    .experiences { position: relative; overflow: hidden; background: radial-gradient(ellipse at 90% 0%, #275740 0, transparent 34%), var(--forest); }
+    .experiences::after {
+      position: absolute;
+      right: -120px;
+      bottom: -290px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgb(220 231 160 / 10%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px rgb(220 231 160 / 3%), 0 0 0 90px rgb(220 231 160 / 2%);
+      content: "";
+      pointer-events: none;
+    }
+    .experiences .wrap { position: relative; z-index: 1; }
+    .experience-heading { margin-bottom: 39px; }
+    .experience-heading .section-copy { font-size: 12px; line-height: 1.85; }
+    .experience-grid { gap: 15px; }
+    .experience-card {
+      min-height: 250px;
+      padding: 27px 28px;
+      border: 1px solid rgb(255 255 255 / 15%);
+      border-radius: 9px;
+      background: rgb(255 255 255 / 3%);
+      transition: transform .25s, border-color .25s, background .25s;
+    }
+    .experience-card:hover { transform: translateY(-5px); border-color: rgb(220 231 160 / 55%); background: rgb(255 255 255 / 6%); }
+    .experience-card .card-number { font-size: 11px; letter-spacing: .12em; }
+    .experience-card h3 { margin-top: 46px; font-size: 25px; }
+    .experience-card p { font-size: 11px; line-height: 1.9; }
+    .gallery { background: var(--paper); }
+    .gallery-grid { grid-template-rows: 235px 235px; gap: 14px; }
+    .gallery-item { border-radius: 8px; }
+    .gallery-item::after { background: linear-gradient(transparent 35%, rgb(8 27 20 / 61%)); }
+    .gallery-item span { right: 19px; bottom: 18px; left: 19px; font-size: 11px; }
+    .reviews { background: #f4f5ee; }
+    .rating { padding: 13px 17px; border: 1px solid #e3e6d7; border-radius: 9px; background: rgb(255 255 255 / 60%); }
+    .rating-number { font-size: 42px; }
+    .stars { font-size: 13px; }
+    .review-grid { gap: 15px; }
+    .review-card { padding: 27px; border: 1px solid #eceee5; border-radius: 9px; box-shadow: 0 8px 22px rgb(30 49 37 / 3%); }
+    .review-stars { font-size: 11px; }
+    .review-card blockquote { margin: 18px 0 24px; font-size: 16px; line-height: 1.65; }
+    .review-source { font-size: 9px; }
+    .visit { background: radial-gradient(ellipse at 0% 100%, #1d4a37 0, transparent 38%), var(--forest-deep); }
+    .visit-grid { gap: 80px; }
+    .visit .section-copy { font-size: 12px; line-height: 1.9; }
+    .contact-line { font-size: 12px; }
+    .hours-card { padding: 32px 35px; border-radius: 10px; box-shadow: 0 18px 45px rgb(0 0 0 / 13%); }
+    .hours-card h3 { font-size: 24px; }
+    .hours-row { padding: 12px 0; font-size: 11px; }
+    .hours-footnote { font-size: 9px; }
+    footer { padding: 31px 0; font-size: 9px; }
+    .footer-brand { font-size: 17px; }
+    :focus-visible { outline: 3px solid #c8d882; outline-offset: 4px; }
+
+    @media (max-width: 780px) {
+      .wrap { width: min(100% - 36px, 620px); }
+      .nav { min-height: 76px; }
+      .nav-links { display: none; }
+      .hero { min-height: 690px; height: 88vh; background-position: 57% center; }
+      .hero-content { padding-top: 63px; }
+      h1 { font-size: clamp(49px, 11vw, 70px); }
+      .hero-rating { right: 18px; bottom: 30px; padding: 11px 14px; }
+      .hero-rating-score { font-size: 25px; }
+      .quick-info { margin-top: -25px; margin-bottom: -25px; }
+      .quick-grid { width: min(100% - 36px, 620px); border-radius: 12px; }
+      .quick-item { min-height: 72px; padding: 12px 16px; }
+      .quick-item + .quick-item { border-top: 1px solid var(--line); border-left: 0; }
+      section { padding: 76px 0; }
+      .about { padding-top: 112px; }
+      .about-grid { gap: 40px; }
+      .about-photo { min-height: 320px; margin-right: 13px; }
+      .about-photo img { height: 320px; }
+      .experience-card { min-height: 0; }
+      .experience-card h3 { margin: 20px 0 8px; }
+      .gallery-grid { grid-template-rows: 240px 155px 155px; gap: 9px; }
+      .gallery-item { border-radius: 6px; }
+      .visit-grid { gap: 35px; }
+      .hours-card { padding: 25px 22px; }
+    }
+    @media (max-width: 390px) {
+      .hero-rating { right: 18px; bottom: 20px; }
+    }
+    .experience-card { position: relative; padding: 26px 27px 28px; }
+    .experience-card .card-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      margin-top: 22px;
+      border: 1px solid rgb(220 231 160 / 27%);
+      border-radius: 50%;
+      color: var(--lime);
+      background: rgb(220 231 160 / 7%);
+    }
+    .experience-card .card-icon svg { width: 21px; height: 21px; }
+    .experience-card h3 { margin: 17px 0 9px; }
+    .review-card { position: relative; overflow: hidden; }
+    .review-card::after {
+      position: absolute;
+      top: -35px;
+      right: 16px;
+      color: rgb(71 123 88 / 8%);
+      content: "”";
+      font: 700 150px/.9 var(--serif);
+      pointer-events: none;
+    }
+    .review-card blockquote { position: relative; z-index: 1; }
+    .review-stars, .review-source { position: relative; z-index: 1; }
+    .gallery-item img { filter: saturate(.88); }
+    .gallery-item:hover img { filter: saturate(1.05); }
+    .hours-row span:first-child { color: #52645a; }
+    .hours-row span:last-child { min-width: 96px; text-align: right; }
+    .contact-line a { text-decoration: underline; text-decoration-color: rgb(255 255 255 / 30%); text-underline-offset: 3px; }
+    .contact-line a:hover { color: var(--lime); text-decoration-color: var(--lime); }
+    .visit-map { margin-top: 58px; }
+    .visit-map-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+    .visit-map-heading .section-kicker { margin-bottom: 9px; }
+    .visit-map-heading h3 { margin: 0; color: white; font: 500 27px var(--serif); }
+    .visit-map-link { flex: 0 0 auto; color: var(--lime); }
+    .map-frame {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 2.25 / 1;
+      min-height: 280px;
+      border: 1px solid rgb(255 255 255 / 20%);
+      border-radius: 11px;
+      background: #e8eee4;
+      box-shadow: 0 18px 44px rgb(0 0 0 / 17%);
+    }
+    .map-frame iframe { width: 100%; height: 100%; position: absolute; inset: 0; border: 0; }
+
+    @media (max-width: 780px) {
+      .experience-card { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 16px; }
+      .experience-card .card-number { grid-column: 1; }
+      .experience-card .card-icon { grid-column: 2; grid-row: 1 / span 2; margin: 0; }
+      .experience-card h3 { grid-column: 1; margin: 13px 0 6px; }
+      .experience-card p { grid-column: 1 / -1; }
+      .review-card::after { top: -30px; right: 9px; font-size: 125px; }
+      .visit-map { margin-top: 42px; }
+      .visit-map-heading { align-items: start; flex-direction: column; gap: 12px; }
+      .visit-map-heading h3 { font-size: 24px; }
+      .map-frame { aspect-ratio: 1 / 1; min-height: 280px; max-height: 400px; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-content { animation: arrive .7s ease-out both; }
+      @keyframes arrive {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="Águas de São José, início">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15c2.2 0 2.2-2 4.4-2s2.2 2 4.4 2 2.2-2 4.4-2 2.2 2 4.4 2"/><path d="M5 19c1.7 0 1.7-1.5 3.4-1.5s1.7 1.5 3.4 1.5 1.7-1.5 3.4-1.5 1.7 1.5 3.4 1.5M12 3c0 3-3 4.4-3 7a3 3 0 0 0 6 0c0-2.6-3-4-3-7Z"/></svg>
+        </span>
+        <span class="brand-name">Águas de São José<span class="brand-sub">Pesque e pague · Santa Maria do Oeste</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#sobre">O lugar</a>
+        <a href="#experiencias">Experiências</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#visite">Como chegar</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/5542991332695" target="_blank" rel="noopener noreferrer">Fale com a gente ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-label="Águas de São José">
+      <div class="wrap">
+        <div class="hero-content">
+          <div class="eyebrow">Seu refúgio em Santa Maria do Oeste</div>
+          <h1>Um dia de natureza, <em>do seu jeito.</em></h1>
+          <p class="hero-copy">Pesca, piscina e comida boa para aproveitar sem pressa — com a família, os amigos ou simplesmente para respirar fundo.</p>
+          <div class="actions">
+            <a class="button button-primary" href="https://www.google.com/maps/search/?api=1&query=33JQ%2B3H%20Santa%20Maria%20do%20Oeste%2C%20PR" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              Como chegar
+            </a>
+            <a class="button button-ghost" href="https://wa.me/5542991332695" target="_blank" rel="noopener noreferrer">Entre em contato <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+            Santa Maria do Oeste · Paraná
+          </div>
+        </div>
+        <div class="hero-rating" aria-label="Avaliação de 4,8 de 5 no Google">
+          <span class="hero-rating-score">4,8</span>
+          <span class="hero-rating-detail"><span class="hero-rating-stars" aria-hidden="true">★★★★★</span><span class="hero-rating-caption">85 avaliações no Google</span></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="quick-info">
+      <div class="wrap quick-grid">
+        <div class="quick-item">
+          <span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.6 5.6 7 7m10 10 1.4 1.4m0-12.8L17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg></span>
+          <div><span class="quick-label">Funcionamento</span><span class="quick-value">Ter a dom, 9h às 20h<small>Fechado às segundas</small></span></div>
+        </div>
+        <div class="quick-item">
+          <span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.1-4.6A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8.5 8.5c.5 2.5 2.5 4.5 5 5l1.2-1.2 2 .8-.3 2c-4.8.8-9.3-3.7-8.5-8.5l2-.3.8 2-1.2 1.2Z"/></svg></span>
+          <div><span class="quick-label">Fale com a gente</span><a class="quick-value" href="tel:+5542991332695">(42) 99133-2695</a><small>Toque para ligar</small></div>
+        </div>
+        <div class="quick-item">
+          <span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.2"/></svg></span>
+          <div><span class="quick-label">Estamos em</span><span class="quick-value">Santa Maria do Oeste<small>Paraná · CEP 85230-000</small></span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="about" id="sobre">
+      <div class="wrap about-grid">
+        <div class="about-copy">
+          <div class="section-kicker">Um convite para desacelerar</div>
+          <h2 class="section-title">Mais que um passeio.<br>Um dia bem vivido.</h2>
+          <p class="section-copy">Tem lugar que faz a gente esquecer da correria. Aqui, você encontra tanques de pesca, piscinas para se refrescar e aquele almoço caprichado para completar o passeio.</p>
+          <p class="section-copy">Um espaço para curtir a natureza e criar boas lembranças com quem você gosta. Traga a família, reúna os amigos e aproveite o dia no seu ritmo.</p>
+          <a class="text-link" href="#visite">Planeje sua visita <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </div>
+        <div class="about-photo">
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tna0PmBYjGXzF9chBBwjR_c5k1l6z32rrCCVAVVCbLMJBl2UhB_LE67_-AV_n0EAj8rGpxQl-axyxMo67e7TfVKgkZWURyBuFVA3KzncFKoKsKZOUMeUbw6CzfMshb9rF-nRQQ=w1000-h800-k-no" alt="Área de lazer do Águas de São José" loading="lazy">
+          <div class="photo-caption"><strong>Natureza para aproveitar</strong><span>Um cantinho especial no interior do Paraná</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experiences" id="experiencias">
+      <div class="wrap">
+        <div class="experience-heading">
+          <div><div class="section-kicker">Um pouco de tudo</div><h2 class="section-title">Seu passeio, suas escolhas.</h2></div>
+          <p class="section-copy">Um lugar para aproveitar o dia inteiro, seja qual for o seu programa favorito.</p>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-card">
+            <span class="card-number">01 / PESCA</span>
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12c3.4-4 8.6-4 12 0-3.4 4-8.6 4-12 0Z"/><path d="M15 12h6l-3-3m3 3-3 3M8 11.5h.01"/></svg></span>
+            <h3>Dia de pescaria</h3>
+            <p>Curta os tanques de pesca em um ambiente tranquilo, cercado pela natureza.</p>
+          </article>
+          <article class="experience-card">
+            <span class="card-number">02 / LAZER</span>
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8c2.3 0 2.3-2 4.7-2s2.3 2 4.6 2 2.4-2 4.7-2 2.4 2 4.7 2M3 13c2.3 0 2.3-2 4.7-2s2.3 2 4.6 2 2.4-2 4.7-2 2.4 2 4.7 2M3 18c2.3 0 2.3-2 4.7-2s2.3 2 4.6 2 2.4-2 4.7-2 2.4 2 4.7 2"/></svg></span>
+            <h3>Mergulho e diversão</h3>
+            <p>Piscinas e toboágua para refrescar o dia e fazer a alegria de toda a família.</p>
+          </article>
+          <article class="experience-card">
+            <span class="card-number">03 / SABOR</span>
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18a8 8 0 0 1-8 8h-2a8 8 0 0 1-8-8Z"/><path d="M5 8c1-1 1-2 0-3m5 3c1-1 1-2 0-3m5 3c1-1 1-2 0-3m5 3c1-1 1-2 0-3"/></svg></span>
+            <h3>Comida que reúne</h3>
+            <p>Almoço e porções saborosas para deixar o passeio ainda mais gostoso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="galeria">
+      <div class="wrap">
+        <div class="gallery-top">
+          <div><div class="section-kicker">Um gostinho do passeio</div><h2 class="section-title">A beleza de cada momento.</h2></div>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=%C3%81guas%20de%20S%C3%A3o%20Jos%C3%A9%20Santa%20Maria%20do%20Oeste" target="_blank" rel="noopener noreferrer">Ver no Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </div>
+        <div class="gallery-grid">
+          <a class="gallery-item" href="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T2Uo72UjuHWSVgtS7Iu6lIfZFuIzaJLDHdajHOCULPvkxCuGYo896itPXRrJV4qZhWqZfe_nK3Y4Ww5BrcdLKs40iqd0U8XDCtq6JkP8MexgfRBoJoa-guJfD5UWw1uCEF5fbw=w1200-h900-k-no" target="_blank" rel="noopener noreferrer"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T2Uo72UjuHWSVgtS7Iu6lIfZFuIzaJLDHdajHOCULPvkxCuGYo896itPXRrJV4qZhWqZfe_nK3Y4Ww5BrcdLKs40iqd0U8XDCtq6JkP8MexgfRBoJoa-guJfD5UWw1uCEF5fbw=w900-h1000-k-no" alt="Paisagem do Águas de São José" loading="lazy"><span>Um lugar para respirar fundo</span></a>
+          <a class="gallery-item" href="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SA1wJMwxrltAVTNBb3OZJT5Uto22JWBHsw76Sna-HzV__w9Fnixz9axoFuSvZjYtxlGLnnQTRumWJ-bmEcyeC-hBSPQgF4O11vf7ZoPncc1jrcK0LF5rWeyGe-2S0yJZ3twjVxBg=w1200-h900-k-no" target="_blank" rel="noopener noreferrer"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SA1wJMwxrltAVTNBb3OZJT5Uto22JWBHsw76Sna-HzV__w9Fnixz9axoFuSvZjYtxlGLnnQTRumWJ-bmEcyeC-hBSPQgF4O11vf7ZoPncc1jrcK0LF5rWeyGe-2S0yJZ3twjVxBg=w800-h600-k-no" alt="Fim de tarde no Águas de São José" loading="lazy"><span>Fim de tarde por aqui</span></a>
+          <a class="gallery-item" href="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QSE13gTgIEHpBpcohTzl3LU5hX0wvJPpt1LYxcF-J7CoiWmTEafKTJ43MKcyHwv9S09QkeFNQ-MGkk6xQLXL6JvzylSdfsXlJY99z9LXmsnl0IpNmErFpgFAZYMGY7WlQrqkU=w800-h1400-k-no" target="_blank" rel="noopener noreferrer"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QSE13gTgIEHpBpcohTzl3LU5hX0wvJPpt1LYxcF-J7CoiWmTEafKTJ43MKcyHwv9S09QkeFNQ-MGkk6xQLXL6JvzylSdfsXlJY99z9LXmsnl0IpNmErFpgFAZYMGY7WlQrqkU=w500-h700-k-no" alt="Vídeo do espaço de lazer" loading="lazy"><span>Momentos de lazer</span></a>
+          <a class="gallery-item" href="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tna0PmBYjGXzF9chBBwjR_c5k1l6z32rrCCVAVVCbLMJBl2UhB_LE67_-AV_n0EAj8rGpxQl-axyxMo67e7TfVKgkZWURyBuFVA3KzncFKoKsKZOUMeUbw6CzfMshb9rF-nRQQ=w1200-h900-k-no" target="_blank" rel="noopener noreferrer"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tna0PmBYjGXzF9chBBwjR_c5k1l6z32rrCCVAVVCbLMJBl2UhB_LE67_-AV_n0EAj8rGpxQl-axyxMo67e7TfVKgkZWURyBuFVA3KzncFKoKsKZOUMeUbw6CzfMshb9rF-nRQQ=w800-h600-k-no" alt="Espaço do proprietário no Águas de São José" loading="lazy"><span>Feito para curtir junto</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="avaliacoes">
+      <div class="wrap">
+        <div class="reviews-heading">
+          <div><div class="section-kicker">Quem já conhece recomenda</div><h2 class="section-title">Boas histórias por aqui.</h2></div>
+          <div class="rating"><span class="rating-number">4,8</span><div><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><span class="rating-caption">85 avaliações no Google</span></div></div>
+        </div>
+        <div class="review-grid">
+          <article class="review-card"><div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote>“Lugar maravilhoso para passear com a família. Aconchegante, almoço maravilhoso e porções incríveis.”</blockquote><div class="review-source">Avaliação no Google · Sidinei Silva Gesso</div></article>
+          <article class="review-card"><div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote>“Ótimo lugar, bem organizado. A comida é uma delícia e as piscinas são ótimas para refrescar.”</blockquote><div class="review-source">Avaliação no Google · Ivan Zaiatz</div></article>
+          <article class="review-card"><div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote>“Lindo lugar em meio à natureza, com tanques de pesca, piscinas com toboágua e ótimo atendimento.”</blockquote><div class="review-source">Avaliação no Google · Gralha Azul - Turismo e Aventura</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visite">
+      <div class="wrap visit-grid">
+        <div>
+          <div class="section-kicker">Vai ser um prazer receber você</div>
+          <h2 class="section-title">Seu próximo dia especial começa aqui.</h2>
+          <p class="section-copy">Organize seu passeio e venha aproveitar. Para confirmar detalhes, fale diretamente com o Águas de São José.</p>
+          <div class="contact-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.1-4.6A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8.5 8.5c.5 2.5 2.5 4.5 5 5l1.2-1.2 2 .8-.3 2c-4.8.8-9.3-3.7-8.5-8.5l2-.3.8 2-1.2 1.2Z"/></svg>
+            <div><strong>Telefone / WhatsApp</strong><a href="tel:+5542991332695">(42) 99133-2695</a></div>
+          </div>
+          <div class="contact-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+            <div><strong>Endereço</strong>Santa Maria do Oeste, PR<br>33JQ+3H · CEP 85230-000</div>
+          </div>
+          <div style="margin-top:28px">
+            <a class="button button-primary" href="https://www.google.com/maps/search/?api=1&query=33JQ%2B3H%20Santa%20Maria%20do%20Oeste%2C%20PR" target="_blank" rel="noopener noreferrer">
+              Abrir rota no Google Maps <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+        <div class="hours-card">
+          <h3>Horários de funcionamento</h3>
+          <div class="hours-row"><span>Domingo</span><span>09:00–20:00</span></div>
+          <div class="hours-row closed"><span>Segunda-feira</span><span>Fechado</span></div>
+          <div class="hours-row"><span>Terça-feira</span><span>09:00–20:00</span></div>
+          <div class="hours-row"><span>Quarta-feira</span><span>09:00–20:00</span></div>
+          <div class="hours-row"><span>Quinta-feira</span><span>09:00–20:00</span></div>
+          <div class="hours-row"><span>Sexta-feira</span><span>09:00–20:00</span></div>
+          <div class="hours-row"><span>Sábado</span><span>09:00–20:00</span></div>
+          <p class="hours-footnote">Horários informados no Google Maps. Recomendamos confirmar antes da visita.</p>
+        </div>
+      </div>
+      <div class="wrap visit-map">
+        <div class="visit-map-heading">
+          <div>
+            <div class="section-kicker">Encontre o caminho</div>
+            <h3>Estamos pertinho de você.</h3>
+          </div>
+          <a class="text-link visit-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=33JQ%2B3H%20Santa%20Maria%20do%20Oeste%2C%20PR%2085230-000" target="_blank" rel="noopener noreferrer">Abrir no Google Maps <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="map-frame">
+          <iframe
+            src="https://maps.google.com/maps?q=33JQ%2B3H%20Santa%20Maria%20do%20Oeste%2C%20PR%2085230-000&amp;z=15&amp;output=embed"
+            title="Mapa interativo do Águas de São José em Santa Maria do Oeste"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="footer-brand" href="#inicio">Águas de São José</a>
+      <span>Natureza, lazer e bons momentos em Santa Maria do Oeste, PR.</span>
+      <div class="footer-links"><a href="#sobre">O lugar</a><a href="#galeria">Galeria</a><a href="#visite">Contato</a></div>
+    </div>
+  </footer>
+</body>
+</html>
